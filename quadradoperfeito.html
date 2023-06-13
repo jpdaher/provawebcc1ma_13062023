@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrados Perfeitos</title>
+</head>
+<body>
+    <h2>Digite um número abaixo para checar se é um quadrado perfeito</h2>
+    <input id="numero" type="number">
+    <button onclick="checarQuadrado()">Checar</button>
+
+    <script>
+        function checarQuadrado(n) {
+            var n = parseInt(document.getElementById("numero").value);
+            let raiz = Math.sqrt(n);
+            if (raiz === Math.floor(raiz)) {
+                alert(n + " é um quadrado perfeito!")
+            } else {
+                alert(n + " não é um quadrado perfeito.")
+            }
+        }
+    </script>
+
+</body>
+</html>

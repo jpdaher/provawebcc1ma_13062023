@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+<body>
+    <h2>Clique no botão abaixo para gerar uma lista com os números primos de 1 a 1000.</h2>
+    <button onclick="gerarLista()">Gerar Lista</button>
+    <div id="lista"></div>
+
+    <script>
+        let numeroAtual = 1;
+        function checarPrimo(numeroAtual) {
+            let divisores = 0;
+            
+            for (let i = 1 ; i <= 1000 ; i++) {
+                if (numeroAtual % i == 0) {
+                divisores++;
+                }
+            }
+            return divisores == 2;
+        }
+
+        function gerarLista() {
+            let lista = "";
+            for (let numeroAtual = 1; numeroAtual <= 1000; numeroAtual++) {
+                if (checarPrimo(numeroAtual)) {
+                    lista += numeroAtual + " ";
+                }
+            }
+            document.getElementById("lista").innerHTML = lista;
+        }
+
+    </script>
+</body>
+</html>

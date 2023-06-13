@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senhas</title>
+</head>
+
+<body>
+    <h2>Digite uma senha contendo 8 caracteres, letras maiúsculas e minúsculas e um número.</h2>
+    <input id="senha" type="password" placeholder="Digite sua senha...">
+    <button onclick="checarSenha()">Verificar</button>
+
+    <script>
+        var numeros = /[0-9]/;
+        var alfabeto = /[a-z]/;
+        var alfabetoMaiusc = /[A-Z]/;
+        
+        function checarSenha() {
+            var senha = document.getElementById("senha").value;
+            var senhaLength = senha.length;
+
+            if (senhaLength < 8) {
+                alert("Senha curta demais, mínimo 8 caracteres");
+            } else {
+
+                if (numeros.test(senha) && alfabeto.test(senha) && alfabetoMaiusc.test(senha)) {
+                    alert("Senha válida!");
+                } else {
+                    alert("Senha inválida, não atende a todos os requisitos.");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
